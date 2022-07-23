@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<template id="idsuccess" name="Customer Form Successfully Submitted">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="alert alert-success">
+                            Customer created successfully.
+                            <div class="pull-right">
+                                <a t-attf-href="{{url}}" class="btn btn-success">Se connecter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure">
+                <div class="container">
+                
+                    <table class="table-striped table">
+                      <thead style="font-size: 23px;">
+                      <tr>
+                        <h6>
+                          <b>
+                            <th>Full name</th>
+                            <th>Clone url</th>
+                            <th>Description</th>
+                            <th>Date created</th>
+                            <th>Date of last push</th>
+                            <th>Home Page</th>
+                            <th>Language</th>
+                            <th>Number of forks</th>
+                            <th>Number of stars</th>
+                            <!-- <th>Status</th> -->
+                            
+                          </b>
+                        </h6>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <!-- <t t-foreach="my_details" t-as="order">
+                        <tr>
+                        <td><span t-esc="order"/></td>
+                        <td><span t-esc="order[0]"/></td>
+                        <td><span t-esc="order[1]"/></td>
+                        <td><span t-esc="order.pushed_at"/></td>
+                        <td><span t-esc="order.homepage"/></td>
+                        <td><span t-esc="order.language"/></td>
+                        <td><span t-esc="order.forks"/></td>
+                        <td><span t-esc="order.stargazers_count"/></td>
+                        </tr>
+                        </t> -->
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+        </t>
+    </template>
+</odoo>

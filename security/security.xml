@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+        <record model="ir.module.category" id="memo_rule">
+            <field name="name">Memo</field>
+            <field name="description">Niveaux d'accés</field>
+            <field name="sequence">3</field>
+        </record>
+        
+      <record id="make_invisible" model="res.groups">
+         <field name="name">Invisible</field>
+     </record>
+     <record model="ir.ui.menu" id="module.menu_name">
+    <field name="groups_id" eval="[(6,0,[ref('make_invisible')])]"/>
+    </record>
+        
+     
+</odoo>

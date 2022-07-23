@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="detailpage">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure ">
+        <div class="container">
+          <section class="o-sh-banner s_banner parallax text-center overflow-hidden" data-scroll-background-ratio="0.9">
+            <!-- <span class="s_parallax_bg oe_img_bg" style="background-image: url('/zeyna/static/src/images/c.jpeg'); background-position: center center;transform: translateY(20px);"></span> -->
+            <div class="mx-auto card my-5 w-100">
+              <div class="card-body px-5">
+                <div class="mt24 mb24 alert alert-info">
+                            Alors nous allons se lier avec github là où vos modules sont stockés. SVP selectionnez votre ripository à déployer.
+                </div>
+                <h2 class="mb32 mt0 text-center">Déployer vos Plateforme</h2>
+                <form action="/customer/form/submit" >
+                  <!-- <input type="hidden" name="csrf_token" value="4fb0f128e665541637c1bfe7bb4e8c40084b88ddo1654816650"/> -->
+                  <div class="form-group mb16 row">
+                    <label class="col-md-3 control-label text-700 text-md-right" for="repository">Repository Github:</label>
+                    <!-- <div class="col-md-9 offset-mb4">
+                      <div class="input-group" id="group-create">
+                        <input type="text" name="name" class="form-control" autofocus="true"/>
+                      </div>
+                    </div> -->
+                    <!-- <div class="input-group" id="group-repository" style="display: none;"> -->
+                      <select  id="repository" name="repository" class="col-md-9 mb4 form-control" >
+                        <div t-foreach="my_infos" t-as="ripo" >
+                        <option t-att-value="ripo.full_name,ripo.clone_url" ><span t-esc="ripo.full_name"/></option>
+                        <!-- <input t-att-value="ripo.clone_url" hidden="hidden" ,ripo.description,ripo.created_at,ripo.pushed_at,ripo.homepage,ripo.language,ripo.forks,ripo.stargazers_count/> -->
+                        </div>
+                      </select>
+                    <!-- </div> -->
+                  </div>
+                  <div class="form-group mb16 row">
+                    <label class="col-md-3 control-label text-700 text-md-right" for="nomb">
+                                    Nom Branche Github:</label>
+                    <div class="col-md-9 mb4">
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="nomb" placeholder="e.g. production" required="required" autocomplete="off"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-9 offset-md-3">
+                      <button type="submit" class="btn btn-primary btn-block">
+                        <span class="o_message">Déployer</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </t>
+  </template>
+</odoo>

@@ -1,0 +1,26 @@
+version: '3'
+services:
+    web:
+        image: zeyna-memo:12.0
+        container_name: odoo_ci
+        depends_on:
+            - db
+        ports:
+            - 8070:8069
+        environment:
+            - HOST=db_ci
+            - USER=odoo
+            - PASSWORD=myodoo
+        volumes:
+            - /home/zeyna/Workspaces/workspace_zeyna-git/config:/etc/odoo
+            - /home/zeyna/Workspaces/workspace_zeyna-git/salihate:/mnt/extra-addons
+            - /home/zeyna/Workspaces/workspace_zeyna-git/filestore:/var/lib/odoo
+    db:
+        image: postgres:latest
+        container_name: db_ci
+        environment:
+            - POSTGRES_DB=postgres
+            - POSTGRES_PASSWORD=myodoo
+            - POSTGRES_USER=odoo
+        volumes:
+            - /home/zeyna/Workspaces/workspace_zeyna-git/database_files/data:/var/lib/postgresql/data

@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <!-- JS assets -->
+        <template id="assets_backend" inherit_id="web.assets_backend" name="zeyna assets">
+            <xpath expr="script[last()]" position="after">
+                <link rel="stylesheet" type="text/css" href="/zeyna/static/src/css/style.css"/>
+                <!-- <script type="text/javascript" src="/zeyna/static/src/js/contact.js"></script> -->
+                <!-- <link type="text/css" rel="stylesheet" href="/web/content/169445-80b412e/1/web.assets_common.css"/>
+                <link type="text/css" rel="stylesheet" href="/web/content/169835-f26ce1c/1/web.assets_frontend.css"/>
+                <script defer="defer" type="text/javascript" src="/web/content/167975-a8dcb40/1/web.assets_common_minimal_js.js"></script>
+                <script defer="defer" type="text/javascript" src="/web/content/167976-df47fb7/1/web.assets_frontend_minimal_js.js"></script>
+                <script defer="defer" type="text/javascript" data-src="/web/content/169449-2b27fcd/1/web.assets_common_lazy.js"></script>
+                <script defer="defer" type="text/javascript" data-src="/web/content/169837-41f39da/1/web.assets_frontend_lazy.js"></script> -->
+            </xpath>
+        </template>
+    </data>
+</odoo>
